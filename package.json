@@ -1,0 +1,25 @@
+{
+  "name": "livehtml",
+  "version": "0.0.1",
+  "description": "A livescript DSL for building html inspired in Markaby",
+  "main": "lib/livehtml.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/efrence/livehtml.git"
+  },
+  "keywords": [
+    "html",
+    "builder",
+    "livescript"
+  ],
+  "author": "Efrén Carbajal",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "e08865502fa574c75d1e261bc0eb2d1cc3292553"
+}
