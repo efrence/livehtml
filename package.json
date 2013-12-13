@@ -20,7 +20,8 @@
   ],
   "devDependencies": {  
    "livescript": "",
-   "prelude-ls": ""
+   "prelude-ls": "",
+   "cli-color": ""
   },
   "author": "Efrén Carbajal",
   "license": "MIT",
