@@ -11,13 +11,15 @@ An DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) in
 
 #### Basic elements
 
-    {h1,img,br,div} = livehtml
-    
-    div '#main',->
-        h1 'Hello, world!'
-        br!
-        img {src: 'foo.jpg'}
-        a {href: "www.google.com"},"link to google"
+```livescript
+{h1,img,br,div} = livehtml
+
+div '#main',->
+    h1 'Hello, world!'
+    br!
+    img {src: 'foo.jpg'}
+    a {href: "www.google.com"},"link to google"
+```
 
 renders to
 
@@ -32,19 +34,22 @@ renders to
 Note that each element is a function. For example in the first element `'#main'` and `->` are arguments to the  `div` function.
 
 ####nested elements
-    {head,ul,li,h1,body} = livehtml
-    
-    (head {title: "Boats.com"},'') +
-     body ->
-        h1 "Boats.com has great deals"          
-        ul '#list-top-level',->
-            li '.item',"$49 for a canoe"
-            li '.item',"$39 for a raft"
-            li '.item',"$29 for a huge boot that floats and can fit 5 people"
-            ul '#list-second-level', ->
-                li "another li"
-                li '.x', "with class x"
-                li '#y', "with id y"
+
+```livescript
+{head,ul,li,h1,body} = livehtml
+
+(head {title: "Boats.com"},'') +
+ body ->
+    h1 "Boats.com has great deals"          
+    ul '#list-top-level',->
+        li '.item',"$49 for a canoe"
+        li '.item',"$39 for a raft"
+        li '.item',"$29 for a huge boot that floats and can fit 5 people"
+        ul '#list-second-level', ->
+            li "another li"
+            li '.x', "with class x"
+            li '#y', "with id y"
+```
 
 renders to
 ```html
@@ -68,22 +73,24 @@ renders to
 
 #### Using expressjs.
 
-    express = require \express
-    livehtml = require \livehtml
-    app = express!
+```livescript
+express = require \express
+livehtml = require \livehtml
+app = express!
 
-    greet_templ = (name)->
-        {h1,body,div,p} = livehtml
-        body ->
-            div '#chat',->
-                h1 "Hello #{name}"
-                p "How are you?"
+greet_templ = (name)->
+    {h1,body,div,p} = livehtml
+    body ->
+        div '#chat',->
+            h1 "Hello #{name}"
+            p "How are you?"
 
-    app.get '/Greet/:name', (req, res)->
-        res.send greet_templ req.params.name    
+app.get '/Greet/:name', (req, res)->
+    res.send greet_templ req.params.name    
 
-    app.listen(5000)
-    
+app.listen(5000)
+```
+
 ## Caveats
 
 LiveHTML at the moment works only for nodejs.
