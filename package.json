@@ -1,6 +1,6 @@
 {
   "name": "livehtml",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A livescript DSL for building html inspired in Markaby",
   "main": "lib/livehtml.js",
   "directories": {
