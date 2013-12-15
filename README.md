@@ -17,8 +17,8 @@ An DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) in
 div \#main ->
     h1 'Hello, world!'
     br!
-    img {src: 'foo.jpg'}
-    a {href: "www.google.com"} "link to google"
+    img {src: \foo.jpg}
+    a {href: \www.google.com} "link to google"
 ```
 
 renders to
@@ -129,7 +129,7 @@ app = express!
 greet_templ = (name)->
     {h1,body,div,p} = livehtml
     body ->
-        div '#chat',->
+        div \#chat ->
             h1 "Hello #{name}"
             p "How are you?"
 
