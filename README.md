@@ -1,11 +1,10 @@
-
 # DISCLAIMER
 
-## This project is very incomplete and unstable, for serious stuff check out [Coffeecup](https://github.com/gradus/coffeecup)
+## This project is very incomplete and unstable, for serious stuff check out [Coffeecup](https://github.com/gradus/coffeecup) and [teacup](https://github.com/goodeggs/teacup)
 # 
 
 
-LiveHTML is a DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) inspired in [Markaby](https://github.com/markaby/markaby).
+LiveHTML is a tiny DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) inspired in [Markaby](https://github.com/markaby/markaby).
 
 
 ## Installation
@@ -148,7 +147,7 @@ app.listen(5000)
 
 LiveHTML at the moment works only for nodejs.
 
-In LiveHTML every element is a function that render when is called. Therefore, in order to render self-closing tags like `<br/>` for which usually no arguments are passed to, you need to invoke it as `br()` in this case we prefer make use of LiveScript syntactic sugar and just do `br!`.
+In LiveHTML every element is a function that renders when is called. Therefore, in order to render self-closing tags like `<br/>` (for which usually no arguments are passed to) you need to invoke it as `br!` alias of `br()`.
 
 Another implication of the inner works of livehtml is that we can't just type text anywhere. When we need to write anything outside a holder tag we need to use the $$ helper (which is also a tag) but allow us to write anything anywhere. A common use of this is for example in a checkbox input, where we would do something like:
 
