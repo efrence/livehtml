@@ -2,6 +2,7 @@
 
 An DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) inspired in [Markaby](https://github.com/markaby/markaby).
 
+DISCLAIMER: this project is very incomplete and unstable, for serious stuff check out [Coffeecup](https://github.com/gradus/coffeecup)
 
 ## Installation
 
