@@ -4,7 +4,7 @@
 # 
 
 
-LiveHTML is a tiny DSL for generating HTML in [LiveScript](https://github.com/gkz/LiveScript) inspired in [Markaby](https://github.com/markaby/markaby).
+LiveHTML is a tiny DSL for generating HTML in Coffeescript/[LiveScript](https://github.com/gkz/LiveScript) inspired in [Markaby](https://github.com/markaby/markaby).
 
 
 ## Installation
