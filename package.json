@@ -1,6 +1,6 @@
 {
   "name": "livehtml",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A livescript DSL for building html inspired in Markaby",
   "main": "lib/livehtml.js",
   "directories": {
@@ -18,9 +18,11 @@
     "builder",
     "livescript"
   ],
+  "dependencies":{
+    "prelude-ls": ""
+  },
   "devDependencies": {  
-   "livescript": "",
-   "prelude-ls": "",
+   "livescript": "",   
    "cli-color": ""
   },
   "author": "Efrén Carbajal",
