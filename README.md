@@ -21,8 +21,8 @@ LiveHTML is a tiny DSL for generating HTML in [LiveScript](https://github.com/gk
 div \#main ->
     h1 'Hello, world!'
     br!
-    img {src: \foo.jpg}
-    a {href: \www.google.com} "link to google"
+    img src: \foo.jpg
+    a href: \www.google.com, "link to google"
 ```
 
 renders to
@@ -42,21 +42,22 @@ Note that each element is a function. For example in the first element `'#main'`
 ```livescript
 {$$,form,div,label,input,button,p} = livehtml
 
-form {role: \form} ->
+form role: \form, ->
     div \.form-group ->
-        label {for: \exampleInputEmail1} 'Email address'
-        input {type: \email, class: \form-control, id: \exampleInputEmail1, placeholder: 'Enter email'}
+        label for: \exampleInputEmail1, 'Email address'
+        input type: \email, class: \form-control, id: \exampleInputEmail1, placeholder: 'Enter email'
     div \.form-group ->
-        label {for: \exampleInputPassword1} \Password
-        input {type: \password, class: \form-control, id: \exampleInputPassword1, placeholder: \Password}
+        label for: \exampleInputPassword1, \Password
+        input type: \password, class: \form-control, id: \exampleInputPassword1, placeholder: \Password
     div \.form-group ->
-        label {for: \exampleInputFile} 'File input'
-        input {type: \file, id: \exampleInputFile}
+        label for: \exampleInputFile, 'File input'
+        input type: \file, id: \exampleInputFile
         p \.help-block 'Example block-level help text here.'
     div \.checkbox ->
         label ->
-            input {type: \checkbox}; $$ 'Check me out'
-    button {type: \submit, class: 'btn btn-default'} \Submit
+            input type: \checkbox
+            $$ 'Check me out'
+    button type: \submit, class: 'btn btn-default', \Submit
 ```
 
 renders to:
@@ -89,18 +90,18 @@ renders to:
 
 ```livescript
 {head,ul,li,h1,body} = livehtml
-
- head {title: "Boats.com"},'';+
- body ->
-    h1 "Boats.com has great deals"          
-    ul \#list-top-level ->
-        li \.item "$49 for a canoe"
-        li \.item "$39 for a raft"
-        li \.item "$29 for a huge boot that floats and can fit 5 people"
-        ul \#list-second-level ->
-            li "another li"
-            li \.x "with class x"
-            li \#y "with id y"
+ $$ ->
+     head title: "Boats.com"
+     body ->
+        h1 "Boats.com has great deals"          
+        ul \#list-top-level ->
+            li \.item "$49 for a canoe"
+            li \.item "$39 for a raft"
+            li \.item "$29 for a huge boot that floats and can fit 5 people"
+            ul \#list-second-level ->
+                li "another li"
+                li \.x "with class x"
+                li \#y "with id y"
 ```
 
 renders to:
